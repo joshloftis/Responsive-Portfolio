@@ -59,6 +59,8 @@ nav a:hover {
   max-width: 960px;
   margin: 0 auto;
   clear: both;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 h1,
@@ -104,7 +106,6 @@ h3 {
 }
 
 #logo {
-  float: left;
   padding:0 20px;
   height: 90px;
   font-family: Georgia, Times, "Times New Roman", serif;
@@ -114,11 +115,14 @@ h3 {
   color: #fff;
   text-align: center;
   text-decoration: none;
-  background: #4aaaa5;
-}
 
+}
+.brand {
+    background: #4aaaa5;
+    text-align:center;
+}
 nav {
-  float: right;
+  float:right !important;
   margin-top: 25px;
 }
 
@@ -152,7 +156,6 @@ footer {
 /* sidebar */
 
 .sidebar {
-  float: right;
   width: 100%;
   padding: 30px;
   margin-bottom: 20px;
@@ -181,7 +184,6 @@ h3,
 
 /* main */
 .main-section {
-  float: left;
   width: 100%;
   padding: 30px;
   margin: 0 0 40px;
@@ -190,6 +192,8 @@ h3,
 }
 .profile-image {
   margin-right: 10px;
+  padding-left: 0!important;
+  padding-right: 0!important;
 }
 section:first-child p {
   margin-top: -9px;
@@ -233,154 +237,172 @@ input[type=submit] {
   background: #4aaaa5;
   border: 0 none;
 }
-.twelve-lg {
+[class*="col-"] {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.col-twelve-lg {
   width:100%
 }
-.eleven-lg {
+.col-eleven-lg {
   width: 91.666666%
 }
-.ten-lg {
+.col-ten-lg {
   width: 83.333333%;
 }
-.nine-lg {
+.col-nine-lg {
   width:75%;
 }
-.eight-lg {
+.col-eight-lg {
   width: 66.666666%;
 }
-.seven-lg {
+.col-seven-lg {
   width: 58.333333;
 }
-.six-lg {
+.col-six-lg {
   width: 50%;
 }
-.five-lg {
+.col-five-lg {
   width: 41.666666%;
 }
-.four-lg {
+.col-four-lg {
   width: 33.333333%;
 }
-.three-lg {
+.col-three-lg {
   width: 25%;
 }
-.two-lg {
+.col-two-lg {
   width: 16.666666%;
 }
-.one-lg {
+.col-one-lg {
   width: 8.333333;
 }
 @media screen and (max-width: 980px) {
-  .twelve-md {
+  .col-twelve-md {
     width:100%
   }
-  .eleven-md {
+  .col-eleven-md {
     width: 91.666666%
   }
-  .ten-md {
+  .col-ten-md {
     width: 83.333333%;
   }
-  .nine-md {
+  .col-nine-md {
     width:75%;
   }
-  .eight-md {
+  .col-eight-md {
     width: 66.666666%;
   }
-  .seven-md {
+  .col-seven-md {
     width: 58.333333;
   }
-  .six-md {
+  .col-six-md {
     width: 50%;
   }
-  .five-md {
+  .col-five-md {
     width: 41.666666%;
   }
-  .four-md {
+  .col-four-md {
     width: 33.333333%;
   }
-  .three-md {
+  .col-three-md {
     width: 25%;
   }
-  .two-md {
+  .col-two-md {
     width: 16.666666%;
   }
-  .one-md {
+  .col-one-md {
     width: 8.333333;
   }
 }
 @media screen and (max-width: 768px) {
-  .twelve-sm {
+  .col-twelve-sm {
     width:100%
   }
-  .eleven-sm {
+  .col-eleven-sm {
     width: 91.666666%
   }
-  .ten-sm {
+  .col-ten-sm {
     width: 83.333333%;
   }
-  .nine-sm {
+  .col-nine-sm {
     width:75%;
   }
-  .eight-sm {
+  .col-eight-sm {
     width: 66.666666%;
   }
-  .seven-sm {
+  .col-seven-sm {
     width: 58.333333;
   }
-  .six-sm {
+  .col-six-sm {
     width: 50%;
   }
-  .five-sm {
+  .col-five-sm {
     width: 41.666666%;
   }
-  .four-sm {
+  .col-four-sm {
     width: 33.333333%;
   }
-  .three-sm {
+  .col-three-sm {
     width: 25%;
   }
-  .two-sm {
+  .col-two-sm {
     width: 16.666666%;
   }
-  .one-sm {
+  .col-one-sm {
     width: 8.333333;
   }
 }
 @media screen and (max-width: 640px) {
-  .twelve-xs {
+  .col-twelve-xs {
     width:100%
   }
-  .eleven-xs {
+  .col-eleven-xs {
     width: 91.666666%
   }
-  .ten-xs {
+  .col-ten-xs {
     width: 83.333333%;
   }
-  .nine-xs {
+  .col-nine-xs {
     width:75%;
   }
-  .eight-xs {
+  .col-eight-xs {
     width: 66.666666%;
   }
-  .seven-xs {
+  .col-seven-xs {
     width: 58.333333;
   }
-  .six-xs {
+  .col-six-xs {
     width: 50%;
   }
-  .five-xs {
+  .col-five-xs {
     width: 41.666666%;
   }
-  .four-xs {
+  .col-four-xs {
     width: 33.333333%;
   }
-  .three-xs {
+  .col-three-xs {
     width: 25%;
   }
-  .two-xs {
+  .col-two-xs {
     width: 16.666666%;
   }
-  .one-xs {
+  .col-one-xs {
     width: 8.333333;
+  }
+  .brand {
+    margin-right: -15px;
+    margin-left: -15px;
   }
   nav {
     text-align: center;
