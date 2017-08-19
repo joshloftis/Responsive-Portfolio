@@ -20,13 +20,6 @@ body {
   height: 100%;
 }
 
-.wrapper {
-  height: auto !important;
-  height: 100%;
-  min-height: 100%;
-  margin: 0 auto -105px;
-}
-
 footer,
 .push {
   height: 105px;
@@ -53,7 +46,7 @@ nav a:hover {
 /* end hover styling */
 
 /* general styling */
-
+/* Container keeps all content from touch edge of screen. Padding 15 on left and right allow for column gutters.*/
 .container {
   width: 100%;
   max-width: 960px;
@@ -65,7 +58,6 @@ nav a:hover {
 
 h1,
 h2,
-h3,
 p {
   margin-bottom: 20px;
 }
@@ -111,7 +103,7 @@ h3 {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 30px;
   font-weight: 700;
-  line-height: 90px;
+  line-height: 80px;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -121,6 +113,7 @@ h3 {
     background: #4aaaa5;
     text-align:center;
 }
+/*float right!important to override float left on column*/
 nav {
   float:right !important;
   margin-top: 25px;
@@ -163,7 +156,7 @@ footer {
   border: 1px solid #ddd;
 }
 
-h3,
+
 .sidebar h2 {
   padding-bottom: 20px;
   margin-bottom: 15px;
@@ -171,11 +164,11 @@ h3,
   border-bottom: 2px solid #eee;
 }
 
+/*width set to 100% to make images responsive*/
 .social {
-  width: 62px;
-  height: 62px;
+  width:100%;
+  height: auto;
   margin-top: 8px;
-  margin-right: 5px;
 }
 
 .social:last-child {
@@ -190,67 +183,80 @@ h3,
   background: #fff;
   border: 1px solid #ddd;
 }
+/*padding!important to override column padding*/
 .profile-image {
   margin-right: 10px;
   padding-left: 0!important;
   padding-right: 0!important;
 }
+/*Portfolio pagee*/
+/*negative margin to keep image and text aligned together*/
 section:first-child p {
   margin-top: -9px;
 }
+/*make images responsive*/
+.responsive-img {
+  width:100%;
+  height:auto;
+}
+/*position needs to be relative so figcaption can overlay image*/
+figure {
+  position: relative;
+  margin-bottom: 40px;
+  width:100%;
+  margin: 20px 0;
+}
+figcaption {
+  background: #4aaaa5;
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+}
+figcaption h3 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 15px 0;
+}
 /* contact page */
 
-#contact-form ul {
-  margin-bottom: 20px;
-}
-
-#contact-form li {
-  margin-bottom: 10px;
-}
-
-label,
-input[type=text],
-input[type=email],
-textarea {
-  display: block;
+input, textarea {
   width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: 1px solid #dddddd;
+  box-sizing:  border-box;
 }
-
-input[type=text],
-input[type=email],
-textarea {
-  height: 35px;
-  padding: 0 10px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-}
-
-textarea {
-  height: 200px;
-}
-
-input[type=submit] {
-  padding: 10px 30px;
-  font-size: 18px;
-  color: #fff;
-  cursor: pointer;
+input[type="submit"] {
+  margin:0;
+  margin-top: -15px;
+  width: auto;
   background: #4aaaa5;
-  border: 0 none;
+  padding:10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  border:none;
+  cursor: pointer;
 }
+/*Responsive grid styling start*/
+/*Adding padding on left and right to add gutter*/
 [class*="col-"] {
     float: left;
     padding-left: 15px;
     padding-right: 15px;
 }
+/*Negative margins allow for rows to take up left and right padding on container allowing for column gutters*/
 .row {
   margin-left: -15px;
   margin-right: -15px;
 }
+/*clearfix hack*/
 .row::after {
     content: "";
     clear: both;
     display: table;
 }
+/*default styles for large screens*/
 .col-twelve-lg {
   width:100%
 }
@@ -287,6 +293,7 @@ input[type=submit] {
 .col-one-lg {
   width: 8.333333;
 }
+/*Max width, meaning any resolution less than 980px will have these styles (different from bootstrap which uses min-width)*/
 @media screen and (max-width: 980px) {
   .col-twelve-md {
     width:100%
@@ -325,6 +332,7 @@ input[type=submit] {
     width: 8.333333;
   }
 }
+/*Max width, meaning any resolution less than 768px will have these styles (different from bootstrap which uses min-width)*/
 @media screen and (max-width: 768px) {
   .col-twelve-sm {
     width:100%
@@ -362,7 +370,11 @@ input[type=submit] {
   .col-one-sm {
     width: 8.333333;
   }
+  .social {
+    width: 70px;
+  }
 }
+/*Max width, meaning any resolution less than 640px will have these styles (different from bootstrap which uses min-width)*/
 @media screen and (max-width: 640px) {
   .col-twelve-xs {
     width:100%
@@ -404,11 +416,15 @@ input[type=submit] {
     margin-right: -15px;
     margin-left: -15px;
   }
+  /*styling for nav menu on mobile resolutions*/
   nav {
     text-align: center;
   }
   nav a {
     padding: 0 30px;
     margin-bottom: 25px;
+  }
+  nav.col-twelve-xs {
+    margin-top: 15px;
   }
 }
